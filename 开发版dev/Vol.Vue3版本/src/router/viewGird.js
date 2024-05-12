@@ -62,6 +62,18 @@ let viewgird = [
     path: '/Sys_Department',
     name: 'Sys_Department',
     component: () => import('@/views/system/system/Sys_Department.vue')
-  }]
+  }    ,{
+        path: '/CQB_BASE_STEP',
+        name: 'CQB_BASE_STEP',
+        component: () => import('@/views/app/cqb_base_step/CQB_BASE_STEP.vue')
+    }    ,{
+        path: '/CQB_BASE_ASSYSTEP',
+        name: 'CQB_BASE_ASSYSTEP',
+        component: () => import('@/views/app/cqb_base_assystep/CQB_BASE_ASSYSTEP.vue')
+    }    ,{
+        path: '/CQB_BASE_ASSYSTEP_ItemDetail',
+        name: 'CQB_BASE_ASSYSTEP_ItemDetail',
+        component: () => import('@/views/app/cqb_base_assystep_itemdetail/CQB_BASE_ASSYSTEP_ItemDetail.vue')
+    }]
 
 export default viewgird
