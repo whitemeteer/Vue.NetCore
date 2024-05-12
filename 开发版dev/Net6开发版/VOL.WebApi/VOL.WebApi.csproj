@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -32,6 +32,7 @@
     <ProjectReference Include="..\VOL.Core\VOL.Core.csproj" />
     <ProjectReference Include="..\VOL.Entity\VOL.Entity.csproj" />
     <ProjectReference Include="..\VOL.System\VOL.System.csproj" />
+		<ProjectReference Include="..\VOL.App\VOL.App.csproj" />
   </ItemGroup>
 
   <ItemGroup>

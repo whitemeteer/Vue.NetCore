@@ -253,7 +253,7 @@ namespace VOL.WebApi
             {
                 //2个下拉框选项  选择对应的文档
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "VOL.Core后台Api");
-                c.SwaggerEndpoint("/swagger/v2/swagger.json", "测试第三方Api");
+                //c.SwaggerEndpoint("/swagger/v2/swagger.json", "测试第三方Api");
                 c.RoutePrefix = "";
             });
             app.UseRouting();
