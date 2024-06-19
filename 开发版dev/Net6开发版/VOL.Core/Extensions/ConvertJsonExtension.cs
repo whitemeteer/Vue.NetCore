@@ -168,9 +168,9 @@ namespace VOL.Core.Extensions
 
         #endregion
 
-        #region 对象集合转换为json
+        #region 对象集合转换为Json
         /// <summary>
-        /// 对象集合转换为json
+        /// 对象集合转换为Json
         /// </summary>
         /// <param name="array">对象集合</param>
         /// <returns>json字符串</returns>
@@ -355,6 +355,32 @@ namespace VOL.Core.Extensions
             return JsonConvert.SerializeObject(obj, formatDate);
         }
 
+        public static T JsonToEntity<T>(this string entityString)
+        {
+            if (string.IsNullOrEmpty(entityString))
+            {
+                return default(T);
+            }
+            if (entityString == "{}")
+            {
+                entityString = "[]";
+            }
+            return JsonConvert.DeserializeObject<T>(entityString);
+        }
+
+
+        public static List<T> JsonToList<T>(this string listString)
+        {
+            if (string.IsNullOrEmpty(listString))
+            {
+                return default(List<T>);
+            }
+            if (listString == "{}")
+            {
+                listString = "[]";
+            }
+            return JsonConvert.DeserializeObject<List<T>>(listString);
+        }
     }
 }
 
