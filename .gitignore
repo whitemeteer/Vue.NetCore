@@ -82,3 +82,5 @@
 /Net6.SqlSugar/VOL.WebApi/obj
 /Net6.SqlSugar/VOL.WebApi/bin
 .vs
+bin
+obj
