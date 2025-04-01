@@ -42,7 +42,7 @@ export default defineConfig({
     devSourcemap: false
   },
   server: {
-    port: 9990
+    port: 9999
     //配置代理
     // proxy: {//http.js里设置为空axios.defaults.baseURL = "";
     //   '/api': {

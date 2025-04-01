@@ -42,6 +42,11 @@ namespace VOL.WebApi
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
                Host.CreateDefaultBuilder(args)
+                   .ConfigureAppConfiguration((context, config) =>
+                   {
+                       // º”‘ÿ appsettings.json ≈‰÷√
+                       config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                   })
                    .ConfigureWebHostDefaults(webBuilder =>
                    {
                        webBuilder.ConfigureKestrel(serverOptions =>
@@ -49,7 +54,14 @@ namespace VOL.WebApi
                            serverOptions.Limits.MaxRequestBodySize = 10485760;
                            // Set properties and call methods on options
                        });
-                       webBuilder.UseKestrel().UseUrls("http://*:9991");
+
+                       // ¥”≈‰÷√÷–∂¡»° Kestrel º‡Ã˝µÿ÷∑
+                       var configuration = new ConfigurationBuilder()
+                           .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                           .Build();
+
+                       var kestrelUrl = configuration.GetValue<string>("AppUrls:KestrelUrl");
+                       webBuilder.UseKestrel().UseUrls(kestrelUrl);
                        webBuilder.UseIIS();
                        webBuilder.UseStartup<Startup>();
                    }).UseServiceProviderFactory(new AutofacServiceProviderFactory());
